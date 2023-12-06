@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ServiciosController;
+use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\SobreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Inicio');
 });
+
+
+Route::get('Servicios',[ServiciosController::class,'index'])->name('Servicios');
+Route::get('Productos',[ProductosController::class,'index'])->name('Productos');
+Route::get('Sobre-nosotros',[SobreController::class,'index'])->name('Sobre-nosotros');
