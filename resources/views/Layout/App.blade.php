@@ -36,7 +36,7 @@
             <a href="Sobre-nosotros" class="hover:text-black border-b-2 border-transparent hover:border-black">sobre nosotros</a>
         </nav>
         <div class="uppercase font-extrabold opciones text-gray-400 flex gap-2">
-            <a href="Sobre-nosotros" class="hover:text-black border-b-2 border-transparent hover:border-black">Crear Cuenta</a>|
+            <a href="Registro" class="hover:text-black border-b-2 border-transparent hover:border-black">Crear Cuenta</a>|
             <a href="Sobre-nosotros" class="hover:text-black border-b-2 border-transparent hover:border-black">Iniciar sesion</a>
         </div>
         <i class="fa-solid fa-bars text-xl cursor-pointer" id="menu-btn"></i>

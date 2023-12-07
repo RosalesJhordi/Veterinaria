@@ -33,19 +33,19 @@
         </div>
     </div>
     <div>
-        <h1>Novedades:</h1>
+        <h1 class="text-2xl font-semibold">Novedades</h1>
         <p>AQUI HIRAN LAS NOVEDADES O COSAS NUEVAS QUE SE AGREGUEN</p>
     </div>
     <div>
-        <h1>Servicios</h1>
+        <h1 class="text-2xl font-semibold">Servicios</h1>
         <p>AQUI IRAN UNOS SERVICIOS DE MUESTRA</p>
     </div>
     <div>
-        <h1>Productos</h1>
+        <h1 class="text-2xl font-semibold">Productos</h1>
         <p>AQUI IRAN UNOS PRODUCTOS DE MUESTRA</p>
     </div>
     <div>
-        <h1>Informacion</h1>
+        <h1 class="text-2xl font-semibold">Informacion</h1>
         <p>AQUI IRA LA INFORMACION DE LOS VETERINARIOS Y SUS ESPECIALIDADES</p>
     </div>
 @endsection

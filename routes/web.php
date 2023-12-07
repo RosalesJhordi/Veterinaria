@@ -3,6 +3,7 @@
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\SobreController;
+use App\Http\Controllers\RegistroController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,4 @@ Route::get('/', function () {
 Route::get('Servicios',[ServiciosController::class,'index'])->name('Servicios');
 Route::get('Productos',[ProductosController::class,'index'])->name('Productos');
 Route::get('Sobre-nosotros',[SobreController::class,'index'])->name('Sobre-nosotros');
+Route::get('Registro',[RegistroController::class,'index'])->name('Registro');
