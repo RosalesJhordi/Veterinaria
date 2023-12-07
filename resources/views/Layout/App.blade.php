@@ -12,7 +12,7 @@
     <header class="shadow-md p-2 px-20 flex justify-between items-center">
         <div class="flex gap-2 items-center">
             <img src="{{ asset('img/logo.jpg') }}" alt="Logo Veterinaria" class="w-14">
-            <h1 class="font-extrabold text-3xl">PetShop</h1>
+            <h1 class="titulo font-extrabold text-3xl">PetShop</h1>
         </div>
         <nav class="uppercase font-extrabold  text-gray-400 flex gap-10">
             <a href="/" class="hover:text-black border-b-2 border-transparent hover:border-black">inicio</a>
@@ -30,7 +30,7 @@
         <h2 class="p-2 text-md font-semibold">PetShop/@yield('titulo')</h2>
         @yield('contenido')
     </main>
-    <footer class="w-full absolute bottom-0 p-2 text-center">
+    <footer class="w-full absolute bottom-0 p-2 text-center bg-gray-300">
         <h2 class="font-bold text-xl">Derechos reservados Jhon R</h2>
     </footer>
 </body>

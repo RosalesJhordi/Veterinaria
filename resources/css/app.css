@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-h1{
+.titulo{
     -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: blue;
   color: skyblue;
