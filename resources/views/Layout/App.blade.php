@@ -6,32 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Veterinaria</title>
     @vite('resources/css/app.css')
+    @vite('resources/css/media.css')
+    @vite('resources/js/menu.js')
     <script src="https://kit.fontawesome.com/a22afade38.js" crossorigin="anonymous"></script>
 </head>
 <body class="selection:bg-white selection:text-orange-600">
-    <header class="shadow-md p-2 px-20 flex justify-between items-center">
-        <div class="flex gap-2 items-center">
+    <div class="fixed z-50 justify-center items-center w-full bg-gray-800 h-screen" id="menu">
+        <div class="flex flex-col justify-center mt-20 items-center gap-5 text-white uppercase font-extrabold text-2xl">
+            <a href="/" class="border-b-2 border-transparent hover:border-white">inicio</a>
+            <a href="Servicios" class="border-b-2 border-transparent hover:border-white">servicios</a>
+            <a href="Productos" class="border-b-2 border-transparent hover:border-white">Productos</a>
+            <a href="Sobre-nosotros" class="border-b-2 border-transparent hover:border-white">sobre nosotros</a>
+            <a href="Sobre-nosotros" class="border-b-2 border-transparent hover:border-white">Crear Cuenta</a>
+            <a href="Sobre-nosotros" class="border-b-2 border-transparent hover:border-white">Iniciar sesion</a>
+        </div>
+        <div class="flex justify-center items-center mt-20">
+            <i class="fa-solid fa-x cursor-pointer text-white text-2xl" id="close-menu-btn"></i>
+        </div>
+    </div>
+    <header class="shadow-md header p-2 px-20 flex justify-between items-center">
+        <div class="flex gap-2 items-center logo">
             <img src="{{ asset('img/logo.jpg') }}" alt="Logo Veterinaria" class="w-14">
             <h1 class="titulo font-extrabold text-3xl">PetShop</h1>
         </div>
-        <nav class="uppercase font-extrabold  text-gray-400 flex gap-10">
+        <nav class="uppercase font-extrabold nav  text-gray-400 flex gap-10">
             <a href="/" class="hover:text-black border-b-2 border-transparent hover:border-black">inicio</a>
             <a href="Servicios" class="hover:text-black border-b-2 border-transparent hover:border-black">servicios</a>
             <a href="Productos" class="hover:text-black border-b-2 border-transparent hover:border-black">Productos</a>
             <a href="Sobre-nosotros" class="hover:text-black border-b-2 border-transparent hover:border-black">sobre nosotros</a>
         </nav>
-        <div>
-            <a href="" class="text-2xl text-gray-400 hover:text-black">
-                <i class="fa-solid fa-right-to-bracket"></i>
-            </a>
+        <div class="uppercase font-extrabold opciones text-gray-400 flex gap-2">
+            <a href="Sobre-nosotros" class="hover:text-black border-b-2 border-transparent hover:border-black">Crear Cuenta</a>|
+            <a href="Sobre-nosotros" class="hover:text-black border-b-2 border-transparent hover:border-black">Iniciar sesion</a>
         </div>
+        <i class="fa-solid fa-bars text-xl cursor-pointer" id="menu-btn"></i>
     </header>
     <main class="px-20">
         <h2 class="p-2 text-md font-semibold">PetShop/@yield('titulo')</h2>
         @yield('contenido')
     </main>
-    <footer class="w-full absolute bottom-0 p-2 text-center bg-gray-300">
-        <h2 class="font-bold text-xl">Derechos reservados Jhon R</h2>
+    <footer class="w-full footer flex gap-10 justify-center items-center p-2 text-center bg-gray-300">
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15719.773862222859!2d-76.2363243!3d-9.938662099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a7c2e25c51eee9%3A0x791adbfd296fbb35!2sPlaza%20de%20Armas%20de%20Hu%C3%A1nuco!5e0!3m2!1ses-419!2spe!4v1701913384330!5m2!1ses-419!2spe" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+            Ubicanos:
+            <p>
+                Lorem ipsum dolor sit amet.
+            </p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div>
+            Informacion:
+            <P>Lorem ipsum dolor sit.</P>
+            <P>Lorem ipsum dolor sit.</P>
+            <P>Lorem ipsum dolor sit.</P>
+        </div>
     </footer>
 </body>
 </html>

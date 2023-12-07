@@ -1,0 +1,43 @@
+#menu-btn {
+    display: none;
+}
+
+#menu {
+    transform: translateX(9000px);
+    transition: transform 1s ease-in-out;
+}
+
+@media (max-width: 767px) {
+    .header {
+        width: 100%;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .header .logo img {
+        width: 50px;
+    }
+
+    .header .logo h1 {
+        font-size: 25px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .opciones,
+    .bienvenida,
+    .footer {
+        display: none;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    #menu {
+        transform: translateX(600px);
+        transition: transform 1s ease-in-out;
+    }
+}
