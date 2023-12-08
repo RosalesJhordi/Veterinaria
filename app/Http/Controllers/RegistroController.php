@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegistroController extends Controller
 {
@@ -19,5 +21,19 @@ class RegistroController extends Controller
             'dni' =>'required|unique:users,dni',
             'password' => 'required|confirmed|min:6',
         ]);
+
+        User::create([
+            'email' => $request->email,
+            'nombre' => $request->nombre,
+            'apellido' => $request->apellido,
+            'telefono' => $request->telefono,
+            'dni' => $request->dni,
+            'password' => Hash::make($request->password),
+        ]);
+
+        if(!auth()->attempt($request->only('email','password'), $request->remember)){
+            return back()->with('mensaje','Credenciales Incorrectas');
+        }
+        return view('Inicio');
     }
 }
