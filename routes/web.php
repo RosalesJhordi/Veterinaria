@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\SobreController;
@@ -27,3 +28,10 @@ Route::get('Productos',[ProductosController::class,'index'])->name('Productos');
 Route::get('Sobre-nosotros',[SobreController::class,'index'])->name('Sobre-nosotros');
 Route::get('Registro',[RegistroController::class,'index'])->name('Registro');
 Route::post('Registro',[RegistroController::class,'store']);
+Route::get('Login',[LoginController::class,'index'])->name('Login');
+Route::post('Login',[LoginController::class,'store']);
+
+//Adsmin
+Route::get('/Panel', function () {
+    return view('Admin.Inicio');
+})->name('Panel');

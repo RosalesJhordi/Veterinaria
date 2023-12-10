@@ -8,6 +8,7 @@
     @vite('resources/css/app.css')
     @vite('resources/css/media.css')
     @vite('resources/js/menu.js')
+    @vite('resources/js/app.js')
     <script src="https://kit.fontawesome.com/a22afade38.js" crossorigin="anonymous"></script>
 </head>
 <body class="selection:bg-white selection:text-orange-600">
@@ -31,19 +32,36 @@
         </div>
         <nav class="uppercase font-extrabold nav  text-gray-400 flex gap-10">
             <a href="/" class="hover:text-black border-b-2 border-transparent hover:border-black">inicio</a>
-            <a href="Servicios" class="hover:text-black border-b-2 border-transparent hover:border-black">servicios</a>
-            <a href="Productos" class="hover:text-black border-b-2 border-transparent hover:border-black">Productos</a>
-            <a href="Sobre-nosotros" class="hover:text-black border-b-2 border-transparent hover:border-black">sobre nosotros</a>
+            <a href="Servicios" class="hover:text-black border-b-2 border-transparent hover:border-black" id="servi">servicios</a>
+            <a href="Productos" class="hover:text-black border-b-2 border-transparent hover:border-black" id="product">Productos</a>
+            <a href="Sobre-nosotros" class="hover:text-black border-b-2 border-transparent hover:border-black" id="sb">sobre nosotros</a>
         </nav>
-        <div class="uppercase font-extrabold opciones text-gray-400 flex gap-2">
-            <a href="Registro" class="hover:text-black border-b-2 border-transparent hover:border-black">Crear Cuenta</a>|
-            <a href="Sobre-nosotros" class="hover:text-black border-b-2 border-transparent hover:border-black">Iniciar sesion</a>
+        <div class="uppercase font-extrabold opciones text-gray-400 flex gap-2" id="sesion">
+            @if (auth()->user())
+                hola: {{auth()->user()->nombre}}
+            @else
+                <a href="{{ route('Registro') }}" class="hover:text-black border-b-2 border-transparent hover:border-black">Crear Cuenta</a>|
+                <a href="{{ route('Login') }}" class="hover:text-black border-b-2 border-transparent hover:border-black">Iniciar sesion</a>
+            @endif
         </div>
         <i class="fa-solid fa-bars text-xl cursor-pointer" id="menu-btn"></i>
     </header>
-    <main class="px-20">
+    <main class="px-20 relative">
         <h2 class="p-2 text-md font-semibold">PetShop/@yield('titulo')</h2>
         @yield('contenido')
+        @auth
+        @if (auth()->user()->email == "yhordiyhom65@gmail.com")
+        <a href="{{ route('Panel') }}">
+            <div class="bg-orange-600 fixed right-0 bottom-96 h-1/6 px-10 p-2 flex items-center justify-center gap-2" style="border-radius: 200px 0px 10px 200px;
+            -moz-border-radius: 200px 0px 10px 200px;
+            -webkit-border-radius: 200px 0px 10px 200px;
+            border: 0px solid #000000;">
+                <img src="{{ asset('img/panel-admin.jpg') }}" alt="Panel img" class="w-20 rounded-full">
+                <h1 class="text-white font-extrabold text-2xl">Administrar</h1>
+            </div>
+        </a>
+        @endif
+        @endauth
     </main>
     <footer class="w-full footer flex gap-10 justify-center items-center p-2 text-center bg-gray-300">
         <div>
