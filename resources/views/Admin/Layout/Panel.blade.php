@@ -47,30 +47,33 @@
                 @if ($Titulo == $titulo)
                     <a href="{{ route($ruta) }}" class="p-3 a bg-orange-600">{{ $titulo }}</a>
                 @else
-                    <a href="{{ route($ruta) }}" class="p-3 a hover:bg-white hover:text-black">{{ $titulo }}</a>
+                    <a href="{{ route($ruta) }}" class="p-3 a hover:bg-gray-700 hover:text-white">{{ $titulo }}</a>
                 @endif
             @endforeach
-            <a href="/" class="p-3 a hover:bg-white hover:text-black"
-                style="border-radius: 0px 200px 200px 0px;">Volver a inicio</a>
+            <a href="/" class="p-3 a hover:bg-gray-700 hover:text-white">Volver a inicio</a>
         </nav>
 
     </aside>
     <main id="main" class="h-screen overflow-y-scroll" style="width: 85%;">
         <div class="w-full border-b-2 py-10 p-2 flex gap-5 text-white uppercase font-bold">
             <a href="{{ route('Personal') }}"
-                class="w-1/5 h-36 flex justify-center items-center bg-green-600 rounded-sm">
+                class="w-1/5 h-36 flex flex-col justify-center items-center bg-green-600 rounded-sm">
+                <i class="fa-solid fa-users-line text-3xl"></i>
                 Personal
             </a>
             <a href="{{ route('ProductosAdmin') }}"
-                class="w-1/5 h-36 flex justify-center items-center bg-sky-600 rounded-sm">
+                class="w-1/5 h-36 flex flex-col justify-center items-center bg-sky-600 rounded-sm">
+                <i class="fa-solid fa-basket-shopping text-3xl"></i>
                 Productos
             </a>
             <a href="{{ route('Personal') }}"
-                class="w-1/5 h-36 flex justify-center items-center bg-orange-600 rounded-sm">
+                class="w-1/5 h-36 flex flex-col justify-center items-center bg-orange-600 rounded-sm">
+                <i class="fa-solid fa-shield-cat text-3xl"></i>
                 Servicios
             </a>
             <a href="{{ route('Personal') }}"
-                class="w-1/5 h-36 flex justify-center items-center bg-gray-800 rounded-sm">
+                class="w-1/5 h-36 flex flex-col justify-center items-center bg-gray-800 rounded-sm">
+                <i class="fa-solid fa-briefcase text-3xl"></i>
                 Solicitude de Veterinarios
             </a>
         </div>

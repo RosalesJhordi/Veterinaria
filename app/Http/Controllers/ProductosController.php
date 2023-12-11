@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 
 class ProductosController extends Controller
 {
-    public function index(){
-        return view('Productos');
+    public function index_inicio(){
+        $productos = Productos::all();
+        return view('Productos',compact('productos'));
     }
     public function index_productos(){
-        return view('Admin.Productos');
+        $productos = Productos::all();
+        return view('Admin.Productos',compact('productos'));
     }
     public function store(Request $request){
         $this->validate($request,[
@@ -32,5 +34,16 @@ class ProductosController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Producto añadido correctamente');
+    }
+
+    public function delete($id) {
+        $product = Productos::find($id);
+        $img = $product->imagen;
+        $path = public_path('Productos') . '/' . $img;
+        if (file_exists($path)) {
+            unlink($path);
+            $product->delete();
+            return redirect()->back()->with('success', 'Producto Eliminado con éxito');
+        }
     }
 }

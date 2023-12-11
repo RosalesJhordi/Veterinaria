@@ -16,7 +16,7 @@
         <div class="flex flex-col justify-center mt-20 items-center gap-5 text-white uppercase font-extrabold text-2xl">
             <a href="/" class="border-b-2 border-transparent hover:border-white">inicio</a>
             <a href="Servicios" class="border-b-2 border-transparent hover:border-white">servicios</a>
-            <a href="Productos" class="border-b-2 border-transparent hover:border-white">Productos</a>
+            <a href="{{ route('Productos.index') }}" class="border-b-2 border-transparent hover:border-white">Productos</a>
             <a href="Sobre-nosotros" class="border-b-2 border-transparent hover:border-white">sobre nosotros</a>
             <a href="Sobre-nosotros" class="border-b-2 border-transparent hover:border-white">Crear Cuenta</a>
             <a href="Sobre-nosotros" class="border-b-2 border-transparent hover:border-white">Iniciar sesion</a>
@@ -32,13 +32,16 @@
         </div>
         <nav class="uppercase font-extrabold nav  text-gray-400 flex gap-10">
             <a href="/" class="hover:text-black border-b-2 border-transparent hover:border-black">inicio</a>
-            <a href="Servicios" class="hover:text-black border-b-2 border-transparent hover:border-black" id="servi">servicios</a>
-            <a href="Productos" class="hover:text-black border-b-2 border-transparent hover:border-black" id="product">Productos</a>
-            <a href="Sobre-nosotros" class="hover:text-black border-b-2 border-transparent hover:border-black" id="sb">sobre nosotros</a>
+            <a href="{{ route('Servicios') }}" class="hover:text-black border-b-2 border-transparent hover:border-black" id="servi">servicios</a>
+            <a href="{{ route('Productos.index') }}" class="hover:text-black border-b-2 border-transparent hover:border-black" id="product">Productos</a>
+            <a href="{{ route('Sobre-nosotros') }}" class="hover:text-black border-b-2 border-transparent hover:border-black" id="sb">sobre nosotros</a>
         </nav>
         <div class="uppercase font-extrabold opciones text-gray-400 flex gap-2" id="sesion">
             @if (auth()->user())
-                hola: {{auth()->user()->nombre}}
+                <span class="pr-2">
+                    hola: {{auth()->user()->nombre}}
+                </span>|
+                <a href="{{ route('LogOut') }}" class="hover:text-black border-b-2 pl-2 border-transparent hover:border-black">cerrar sesion</a>
             @else
                 <a href="{{ route('Registro') }}" class="hover:text-black border-b-2 border-transparent hover:border-black">Crear Cuenta</a>|
                 <a href="{{ route('Login') }}" class="hover:text-black border-b-2 border-transparent hover:border-black">Iniciar sesion</a>

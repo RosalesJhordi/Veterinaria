@@ -38,11 +38,17 @@
     </div>
     <div>
         <h1 class="text-2xl font-semibold">Servicios</h1>
-        <p>AQUI IRAN UNOS SERVICIOS DE MUESTRA</p>
     </div>
     <div>
         <h1 class="text-2xl font-semibold">Productos</h1>
-        <p>AQUI IRAN UNOS PRODUCTOS DE MUESTRA</p>
+        @foreach ($productos as $producto)
+            <div class="w-1/6 border p-2 shadow-md rounded-md">
+                <img src="{{asset('Productos') . '/' . $producto->imagen}}" alt="Imagen Producto {{$producto->nombre}}" class="w-full">
+                <h1>{{ $producto->nombre }}</h1>
+                <h1>{{ $producto->precio }}</h1>
+                <h1>{{ $producto->descripcion }}</h1>
+            </div>
+        @endforeach
     </div>
     <div>
         <h1 class="text-2xl font-semibold">Informacion</h1>

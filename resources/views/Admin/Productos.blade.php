@@ -40,6 +40,7 @@
             </div>
             @if ($errors->has('nombre'))
                 <script>
+                    const div = document.getElementById("formulario");
                     Toastify({
                         text: "{{ $errors->first('nombre') }}",
                         duration: 5000,
@@ -49,6 +50,7 @@
                         backgroundColor: "#f00",
                         stopOnFocus: true,
                     }).showToast();
+                    div.style.transform = 'translateY(0px)';
                 </script>
             @endif
             <div
@@ -71,6 +73,7 @@
             </div>
             @if ($errors->has('categoria'))
                 <script>
+                    const div = document.getElementById("formulario");
                     Toastify({
                         text: "{{ $errors->first('categoria') }}",
                         duration: 5000,
@@ -80,6 +83,7 @@
                         backgroundColor: "#f00",
                         stopOnFocus: true,
                     }).showToast();
+                    div.style.transform = 'translateY(0px)';
                 </script>
             @endif
             <div
@@ -92,6 +96,7 @@
             </div>
             @if ($errors->has('descripcion'))
                 <script>
+                    const div = document.getElementById("formulario");
                     Toastify({
                         text: "{{ $errors->first('descripcion') }}",
                         duration: 5000,
@@ -101,6 +106,7 @@
                         backgroundColor: "#f00",
                         stopOnFocus: true,
                     }).showToast();
+                    div.style.transform = 'translateY(0px)';
                 </script>
             @endif
             <div
@@ -113,6 +119,7 @@
             </div>
             @if ($errors->has('precio'))
                 <script>
+                    const div = document.getElementById("formulario");
                     Toastify({
                         text: "{{ $errors->first('precio') }}",
                         duration: 5000,
@@ -122,6 +129,7 @@
                         backgroundColor: "#f00",
                         stopOnFocus: true,
                     }).showToast();
+                    div.style.transform = 'translateY(0px)';
                 </script>
             @endif
             <div
@@ -154,5 +162,54 @@
                 Agregar Productos
             </span>
         </div>
+        <table class="w-full mt-10">
+            <thead>
+                <tr class="bg-blue-500 text-center text-white text-xl uppercase">
+                    <th class="border-white p-2 border">Nombre</th>
+                    <th class="border-white p-2 border">Categoria</th>
+                    <th class="border-white p-2 border">precio</th>
+                    <th class="border-white p-2 border">descuento</th>
+                    <th class="border-white p-2 border">imagen</th>
+                    <th class="border-white p-2 border">Fecha-Creacion</th>
+                    <th class="border-white p-2 border">Opciones</th>
+                </tr>
+            </thead>
+            <tbody class="bg-gray-200">
+                @foreach($productos as $producto)
+                    <tr>
+                        <td class="border-white p-2 border text-center font-semibold">
+                            {{ $producto->nombre }}
+                        </td>
+                        <td class="border-white p-2 border text-center font-semibold">
+                            {{ $producto->categoria }}
+                        </td>
+                        <td class="border-white p-2 border text-center font-semibold">
+                            {{ $producto->precio }}
+                        </td>
+                        <td class="border-white p-2 border text-center font-semibold">
+                            @if ($producto->descuento == null)
+                                0%
+                            @else
+                                {{ $producto->descuento }}%
+                            @endif
+                        </td>
+                        <td class="border-white p-2 flex justify-center items-center border text-center font-semibold">
+                            <img src="{{asset('Productos') . '/' . $producto->imagen}}" alt="Imagen Producto {{$producto->nombre}}" class="w-10">
+                        </td>
+                        <td class="border-white p-2 border text-center font-semibold">
+                            {{ $producto->created_at->diffForHumans() }}
+                        </td>
+                        <td class="border-white p-2 border text-2xl text-center font-semibold">
+                            <a href="" class="p-1 text-green-700 hover:text-green-500">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                            <a href="{{ route('delete_product',$producto->id) }}" class="p-1 text-red-700 hover:text-red-500">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 @endsection
