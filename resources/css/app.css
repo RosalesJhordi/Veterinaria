@@ -20,3 +20,16 @@
     /* transform: translateY(-900px);
     transition: transform 1s ease-in-out; */
 }
+
+#btn-panel{
+    animation: entrada 1s ease-in-out;
+}
+
+@keyframes entrada {
+    0% {
+        transform: translateX(300px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

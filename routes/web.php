@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\ProductosController;
@@ -34,6 +35,7 @@ Route::post('Login',[LoginController::class,'store']);
 //Adsmin
 
 Route::get('ProductosAdmin',[ProductosController::class,'index_productos'])->name('ProductosAdmin');
+Route::post('Imagen',[ImagenController::class,'store'])->name('Imagen.store');
 
 Route::get('/Panel', function () {
     return view('Admin.Inicio');

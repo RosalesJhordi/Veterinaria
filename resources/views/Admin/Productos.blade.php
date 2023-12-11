@@ -7,7 +7,7 @@ Productos
 @section('contenido')
 <div class="shadow-md z-50 border-black bg-white flex shadow-black rounded-md fixed" id="formulario">
     <i class="fa-solid fa-x text-2xl cursor-pointer hover:text-red-500 p-2 absolute right-1 top-1" id="close-formulario"></i>
-    <form action="" class="w-1/2 h-full border">Imagen aqui</form>
+    <form action="{{ route('Imagen.store') }}" id="dropzone" method="POST" enctype="multipart/form-data" class="dropzone w-1/2 h-full border flex justify-center items-center">@csrf</form>
     <form action="" class="flex flex-col gap-5">
         <div>
             Nombre de producto

@@ -52,7 +52,7 @@
         @auth
         @if (auth()->user()->email == "yhordiyhom65@gmail.com")
         <a href="{{ route('Panel') }}">
-            <div class="bg-orange-600 fixed right-0 bottom-96 h-1/6 px-10 p-2 flex items-center justify-center gap-2" style="border-radius: 200px 0px 10px 200px;
+            <div id="btn-panel" class="bg-orange-600  fixed right-0 bottom-96 h-1/6 px-10 p-2 flex items-center justify-center gap-2" style="border-radius: 200px 0px 10px 200px;
             -moz-border-radius: 200px 0px 10px 200px;
             -webkit-border-radius: 200px 0px 10px 200px;
             border: 0px solid #000000;">
