@@ -32,6 +32,13 @@ Route::get('Login',[LoginController::class,'index'])->name('Login');
 Route::post('Login',[LoginController::class,'store']);
 
 //Adsmin
+
+Route::get('ProductosAdmin',[ProductosController::class,'index_productos'])->name('ProductosAdmin');
+
 Route::get('/Panel', function () {
     return view('Admin.Inicio');
 })->name('Panel');
+
+Route::get('/Personal', function () {
+    return view('Admin.Personal');
+})->name('Personal');

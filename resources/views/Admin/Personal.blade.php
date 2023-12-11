@@ -1,9 +1,9 @@
 @extends('Admin.Layout.Panel')
 
 @section('titulo')
-Resumen
+Personal
 @endsection
 
 @section('contenido')
-<h1>Resuem</h1>
+PERSONAL
 @endsection

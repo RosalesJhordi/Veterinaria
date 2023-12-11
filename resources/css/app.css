@@ -8,3 +8,15 @@
   color: skyblue;
   letter-spacing: 2px;
 }
+#formulario{
+    width: 60%;
+    height: 60vh;
+    position: fixed;
+    top: 25%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    left: 25%;
+    right: auto;
+    bottom: auto;
+    /* transform: translateY(-900px);
+    transition: transform 1s ease-in-out; */
+}
