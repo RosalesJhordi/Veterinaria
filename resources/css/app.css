@@ -17,8 +17,8 @@
     left: 25%;
     right: auto;
     bottom: auto;
-    /* transform: translateY(-900px);
-    transition: transform 1s ease-in-out; */
+    transform: translateY(-900px);
+    transition: transform 1s ease-in-out;
 }
 
 #btn-panel{

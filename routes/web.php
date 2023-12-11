@@ -37,6 +37,11 @@ Route::post('Login',[LoginController::class,'store']);
 Route::get('ProductosAdmin',[ProductosController::class,'index_productos'])->name('ProductosAdmin');
 Route::post('Imagen',[ImagenController::class,'store'])->name('Imagen.store');
 
+
+//Almacenar productos
+
+Route::post('GuardarProductos',[ProductosController::class,'store'])->name('GuardarProductos');
+
 Route::get('/Panel', function () {
     return view('Admin.Inicio');
 })->name('Panel');

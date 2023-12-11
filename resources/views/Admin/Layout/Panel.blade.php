@@ -9,10 +9,14 @@
     @vite('resources/css/app.css')
     @vite('resources/js/formulario.js')
     <script src="https://kit.fontawesome.com/a22afade38.js" crossorigin="anonymous"></script>
-
+    {{-- dropzone --}}
     @vite('resources/js/dropzone.js')
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+    {{-- toastify --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 </head>
 
 <style>

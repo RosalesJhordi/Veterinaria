@@ -1,9 +1,6 @@
-// Verificar si Dropzone aún no está adjunto
 if (!Dropzone.options.dropzone) {
-    // Desactivar la auto-detección de Dropzone
     Dropzone.autoDiscover = false;
 
-    // Inicializar Dropzone solo si no está adjunto
     const dropzone = new Dropzone("#dropzone", {
         dictDefaultMessage: "Sube una imagen",
         acceptedFiles: ".png,.jpg,.jpeg,.gif,.bmp,.tiff,.WebP",
@@ -20,11 +17,7 @@ if (!Dropzone.options.dropzone) {
                 this.options.addedfile.call(this, imagenP);
                 this.options.thumbnail.call(this, imagenP, '/Productos/' + imagenP.name);
 
-                imagenP.previewElement.classList.add('dz-success', 'dz-complete');
-
-                // Ajustar estilos para que la imagen ocupe el 100% del contenedor
-                imagenP.previewElement.querySelector('.dz-image img').style.width = "100%";
-                imagenP.previewElement.querySelector('.dz-image img').style.height = "auto";
+                imagenP.previewElement.classList.add('dz-succes', 'dz-complete');
             }
         }
     });
