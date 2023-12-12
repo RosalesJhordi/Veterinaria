@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SobreController;
 use App\Http\Controllers\ImagenController;
+use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ServiciosController;
@@ -50,10 +51,8 @@ Route::post('GuardarProductos',[ProductosController::class,'store'])->name('Guar
 
 Route::get('Eliminar/{id}',[ProductosController::class,'delete'])->name('delete_product');
 
-Route::get('/Panel', function () {
+Route::get('Panel', function () {
     return view('Admin.Inicio');
 })->name('Panel');
 
-Route::get('/Personal', function () {
-    return view('Admin.Personal');
-})->name('Personal');
+Route::get('Personal',[PersonalController::class,'index'])->name('Personal');

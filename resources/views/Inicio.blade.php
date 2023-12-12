@@ -32,26 +32,31 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="px-60">
         <h1 class="text-2xl font-semibold">Novedades</h1>
         <p>AQUI HIRAN LAS NOVEDADES O COSAS NUEVAS QUE SE AGREGUEN</p>
     </div>
-    <div>
+    <div class="px-60">
         <h1 class="text-2xl font-semibold">Servicios</h1>
     </div>
-    <div>
+    <div class="px-60">
         <h1 class="text-2xl font-semibold">Productos</h1>
-        @foreach ($productos as $producto)
-            <div class="w-1/6 border p-2 shadow-md rounded-md">
-                <img src="{{asset('Productos') . '/' . $producto->imagen}}" alt="Imagen Producto {{$producto->nombre}}" class="w-full">
-                <h1>{{ $producto->nombre }}</h1>
-                <h1>{{ $producto->precio }}</h1>
-                <h1>{{ $producto->descripcion }}</h1>
-            </div>
-        @endforeach
+        <div class="w-full flex flex-wrap gap-5">
+            @foreach ($productos as $producto)
+                <div class="w-1/6 border p-2 shadow-md rounded-md">
+                    <img src="{{ asset('Productos') . '/' . $producto->imagen }}"
+                        alt="Imagen Producto {{ $producto->nombre }}" class="w-full">
+                    <h1>{{ $producto->nombre }}</h1>
+                    <h1>{{ $producto->precio }}</h1>
+                    <h1>{{ $producto->descripcion }}</h1>
+                </div>
+            @endforeach
+        </div>
     </div>
-    <div>
+    <div class="px-60">
         <h1 class="text-2xl font-semibold">Informacion</h1>
-        <p>AQUI IRA LA INFORMACION DE LOS VETERINARIOS Y SUS ESPECIALIDADES</p>
+        <div class="w-full bg-blue-500 h-20 mt-5 mb-5">
+
+        </div>
     </div>
 @endsection
