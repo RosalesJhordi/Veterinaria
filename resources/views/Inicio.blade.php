@@ -55,8 +55,15 @@
     </div>
     <div class="px-60">
         <h1 class="text-2xl font-semibold">Informacion</h1>
-        <div class="w-full bg-blue-500 h-20 mt-5 mb-5">
-
+        <div class="w-full bg-blue-500 h-96 mt-5 mb-5 flex justify-between rounded-md text-white font-bold">
+            <img src="{{ asset('img/cerca-veterinario-cuidando-perro.jpg') }}" alt="" class="w-1/2 h-full">
+            <div class="w-1/2 h-full flex gap-2 flex-col justify-center items-center">
+                <h1 class="text-3xl">Unete a Nosotros</h1>
+                <p class="text-xl">Puedes unirte completando un formulario y subiendo tu cv</p>
+                <a href="" class="bg-white text-black p-2 w-40 mt-10 rounded-sm text-center">
+                    Subir CV
+                </a>
+            </div>
         </div>
     </div>
 @endsection

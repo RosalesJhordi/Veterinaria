@@ -10,6 +10,8 @@
     @vite('resources/js/menu.js')
     @vite('resources/js/app.js')
     <script src="https://kit.fontawesome.com/a22afade38.js" crossorigin="anonymous"></script>
+
+    @livewireStyles
 </head>
 <body class="selection:bg-white selection:text-orange-600">
     <div class="fixed z-50 justify-center items-center w-full bg-gray-800 h-screen" id="menu">
@@ -36,7 +38,10 @@
             <a href="{{ route('Productos.index') }}" class="hover:text-black border-b-2 border-transparent hover:border-black" id="product">Productos</a>
             <a href="{{ route('Sobre-nosotros') }}" class="hover:text-black border-b-2 border-transparent hover:border-black" id="sb">sobre nosotros</a>
         </nav>
-        <div class="uppercase font-extrabold opciones text-gray-400 flex gap-2" id="sesion">
+        <div class="uppercase font-extrabold opciones text-gray-400 flex justify-between items-center gap-2" id="sesion">
+            <div class="w-1/3 bg-red-500">
+                @livewire('search')
+            </div>
             @if (auth()->user())
                 <span class="pr-2">
                     hola: {{auth()->user()->nombre}}
@@ -84,5 +89,7 @@
             <P>Lorem ipsum dolor sit.</P>
         </div>
     </footer>
+
+    @livewireScripts
 </body>
 </html>
