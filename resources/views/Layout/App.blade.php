@@ -39,7 +39,7 @@
             <a href="{{ route('Sobre-nosotros') }}" class="hover:text-black border-b-2 border-transparent hover:border-black" id="sb">sobre nosotros</a>
         </nav>
         <div class="uppercase font-extrabold opciones text-gray-400 flex justify-between items-center gap-2" id="sesion">
-            <div class="w-1/3 bg-red-500">
+            <div class="w-60 ml-5">
                 @livewire('search')
             </div>
             @if (auth()->user())
@@ -66,6 +66,11 @@
             border: 0px solid #000000;">
                 <img src="{{ asset('img/panel-admin.jpg') }}" alt="Panel img" class="w-20 rounded-full">
                 <h1 class="text-white font-extrabold text-2xl">Administrar</h1>
+            </div>
+        </a>
+        <a href="">
+            <div class="bg-blue-600  fixed right-0 bottom-2 rounded-full  p-4 flex items-center justify-center gap-2">
+                <livewire:notification />
             </div>
         </a>
         @endif

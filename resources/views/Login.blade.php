@@ -35,7 +35,7 @@
                 @enderror
 
                 <div class="py-10 flex justify-center">
-                    <button type="submit" class="bg-blue-500 p-2 w-1/2  rounded-sm hover:bg-blue-700 uppercase font-bold text-white">Crear Cuenta</button>
+                    <button type="submit" class="bg-blue-500 p-2 w-1/2  rounded-sm hover:bg-blue-700 uppercase font-bold text-white">Iniciar sesion</button>
                 </div>
             </form>
         </div>

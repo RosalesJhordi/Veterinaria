@@ -46,4 +46,9 @@ class ProductosController extends Controller
             return redirect()->back()->with('success', 'Producto Eliminado con éxito');
         }
     }
+
+    public function show_busqueda($id) {
+        $busqueda = Productos::where('id', $id)->first();
+        return view('shows.VisorBusqueda',compact('busqueda'));
+    }
 }
