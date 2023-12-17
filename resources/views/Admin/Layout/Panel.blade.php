@@ -71,7 +71,7 @@
                 <i class="fa-solid fa-shield-cat text-3xl"></i>
                 Servicios
             </a>
-            <a href="{{ route('Personal') }}"
+            <a href="{{ route('Solicitudes') }}"
                 class="w-1/5 h-36 flex flex-col justify-center items-center bg-gray-800 rounded-sm">
                 <i class="fa-solid fa-briefcase text-3xl"></i>
                 Solicitude de Veterinarios

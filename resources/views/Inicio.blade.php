@@ -60,7 +60,12 @@
             <div class="w-1/2 h-full flex gap-2 flex-col justify-center items-center">
                 <h1 class="text-3xl">Unete a Nosotros</h1>
                 <p class="text-xl">Puedes unirte completando un formulario y subiendo tu cv</p>
-                @livewire('subir-c-v')
+                @if (auth()->user())
+                    @livewire('subir-c-v')
+                @else
+                    <p class="border border-red-600 uppercase bg-red-100 text-red-600 font-bold p-1 text-sm">Debes inicia sesion o crear una cuenta para poder subir tu CV u Hoja de vida</p>
+                @endif
+
             </div>
         </div>
     </div>

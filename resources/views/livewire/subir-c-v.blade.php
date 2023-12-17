@@ -6,10 +6,15 @@
             <input wire:model="cv" id="cv" name="cv" type="file" accept=".pdf" class="block mt-1 w-full" />
         </div>
         @error('cv')
-            <p class="border border-red-600 uppercase bg-red-100 text-red-600 font-bold p-2">{{ $message }}</p>
+            <p class="border border-red-600 uppercase bg-red-100 text-red-600 font-bold p-1 text-sm">{{ $message }}</p>
         @enderror
         @if (session()->has('success'))
-            <div class="border border-green-600 uppercase bg-green-100 text-green-600 font-bold p-2">
+            <div class="border border-green-600 uppercase bg-green-100 text-green-600 font-bold p-1 text-sm">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if (session()->has('error'))
+            <div class="border border-red-600 uppercase bg-red-100 text-red-600 font-bold p-1 text-sm">
                 {{ session('success') }}
             </div>
         @endif

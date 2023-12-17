@@ -9,8 +9,11 @@ use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ServiciosController;
+use App\Http\Controllers\SolicitudesController;
 use App\Http\Controllers\SubirCVController;
 
+//sOLICITUDES
+Route::get('Solicitudes',[SolicitudesController::class,'index'])->name('Solicitudes');
 Route::get('/', function () {
     $productos = Productos::all();
     return view('Inicio', compact('productos'));

@@ -2,9 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Models\Curriculums;
+use PDF;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use PDF;
+use Illuminate\Support\Facades\Storage;
+
 class SubirCV extends Component
 {
     public $cv;
@@ -15,15 +18,29 @@ class SubirCV extends Component
 
     public function postular()
     {
-        $this->validate();
+        $datos = $this->validate([
+            'cv' => 'required|mimes:pdf|max:10240',
+        ]);
 
-        // Almacenar el archivo en el disco
-        $cvPath = $this->cv->store('public/cvs');
-        $datos['imagen'] = str_replace('public/cvs/', '',$cvPath);
+        $nombreArchivo = uniqid('cv_') . '.' . $datos['cv']->getClientOriginalExtension();
+        $cvPath = $datos['cv']->storeAs('public/cvs', $nombreArchivo);
 
+        if ($cvPath) {
+            session()->flash('success', 'CV subido con éxito, Suerte!');
+            $nuevoCurriculum = new Curriculums([
+                'user_id' => auth()->user()->id,
+                'cv' => $nombreArchivo,
+            ]);
+            auth()->user()->curriculum()->save($nuevoCurriculum);
+            $this->reset('cv');
 
-        session()->flash('success', '¡CV subido con éxito!');
+        } else {
+            session()->flash('error', '¡Error al subir el CV!');
+        }
     }
+
+
+
 
     public function render()
     {
