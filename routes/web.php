@@ -5,15 +5,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SobreController;
 use App\Http\Controllers\ImagenController;
+use App\Http\Controllers\SubirCVController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\SolicitudesController;
-use App\Http\Controllers\SubirCVController;
+use App\Http\Controllers\NotificacionController;
 
 //sOLICITUDES
 Route::get('Solicitudes',[SolicitudesController::class,'index'])->name('Solicitudes');
+
+//Notificaciones
+
+Route::get('Notificaciones', NotificacionController::class)->name('Notificaciones');
+
+
 Route::get('/', function () {
     $productos = Productos::all();
     return view('Inicio', compact('productos'));

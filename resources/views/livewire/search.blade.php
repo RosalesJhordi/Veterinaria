@@ -1,6 +1,6 @@
 <div class="w-full text-lg">
     <input wire:model='search' wire:keyup='searchProduct' type="text" class="w-full rounded-sm border border-black p-0.5"
-        placeholder="Buscar...">
+        placeholder="Buscar Prpoductos o Servicios">
     <div class="w-full relative">
         @if ($lista)
             <div class="bg-gray-900 text-white shadow-md flex flex-col gap-2 w-full absolute z-50 py-5">

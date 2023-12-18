@@ -2,10 +2,12 @@
 
 namespace App\Livewire;
 
-use App\Models\Curriculums;
 use PDF;
+use App\Models\User;
 use Livewire\Component;
+use App\Models\Curriculums;
 use Livewire\WithFileUploads;
+use App\Notifications\NuevaSolicitud;
 use Illuminate\Support\Facades\Storage;
 
 class SubirCV extends Component
@@ -32,8 +34,10 @@ class SubirCV extends Component
                 'cv' => $nombreArchivo,
             ]);
             auth()->user()->curriculum()->save($nuevoCurriculum);
-            $this->reset('cv');
+            $id = User::find(1);
+            $id->notify(new NuevaSolicitud(auth()->user()->id));
 
+            $this->reset('cv');
         } else {
             session()->flash('error', '¡Error al subir el CV!');
         }
