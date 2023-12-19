@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Veterinaria</title>
+    <title>PetShop</title>
     @vite('resources/css/app.css')
     @vite('resources/css/media.css')
     @vite('resources/js/menu.js')
@@ -48,10 +48,17 @@
         <div class="uppercase font-extrabold opciones text-gray-400 flex justify-between items-center gap-2"
             id="sesion">
             @auth
-                <a class="mr-2 w-7 h-7 bg-indigo-600 hover:bg-indigo-800 rounded-full text-white flex justify-center items-center font-extrabold"
-                    href="{{ route('Notificaciones') }}">
-                    {{ Auth::user()->unreadNotifications->count() }}
-                </a>
+                @if (auth()->user()->email == 'yhordiyhom65@gmail.com')
+                    <a class="mr-2 w-7 h-7 bg-indigo-600 hover:bg-indigo-800 rounded-full text-white flex justify-center items-center font-extrabold"
+                        href="{{ route('Notificaciones') }}">
+                        {{ Auth::user()->unreadNotifications->count() }}
+                    </a>
+                @else
+                    <a class="mr-2 w-7 h-7 bg-indigo-600 hover:bg-indigo-800 rounded-full text-white flex justify-center items-center font-extrabold"
+                        href="{{ route('Notificaciones') }}">
+                        <i class="fa-solid fa-bell"></i>
+                    </a>
+                @endif
             @endauth
             @if (auth()->user())
                 <span class="pr-2">
@@ -71,7 +78,7 @@
     <main class="px-20 relative">
         <div class="flex justify-between items-center p-2">
             <h2 class="p-2 text-md font-semibold">PetShop/@yield('titulo')</h2>
-            <div class="w-72 ml-5">
+            <div class="w-80 ml-5">
                 @livewire('search')
             </div>
         </div>

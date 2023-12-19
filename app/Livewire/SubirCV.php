@@ -32,6 +32,7 @@ class SubirCV extends Component
             $nuevoCurriculum = new Curriculums([
                 'user_id' => auth()->user()->id,
                 'cv' => $nombreArchivo,
+                'estado' => 'Sin respuesta'
             ]);
             auth()->user()->curriculum()->save($nuevoCurriculum);
             $id = User::find(1);

@@ -12,6 +12,7 @@ class Curriculums extends Model
     protected $fillable = [
         'user_id',
         'cv',
+        'estado'
     ];
 
     public function user()

@@ -59,7 +59,7 @@
             <img src="{{ asset('img/cerca-veterinario-cuidando-perro.jpg') }}" alt="imagen" class="w-1/2 h-full">
             <div class="w-1/2 h-full flex gap-2 flex-col justify-center items-center">
                 <h1 class="text-3xl">Unete a Nosotros</h1>
-                <p class="text-xl">Puedes unirte completando un formulario y subiendo tu cv</p>
+                <p class="text-xl">Puedes unirte subiendo tu cv</p>
                 @if (auth()->user())
                     @livewire('subir-c-v')
                 @else

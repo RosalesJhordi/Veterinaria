@@ -25,6 +25,10 @@ Route::get('/', function () {
     $productos = Productos::all();
     return view('Inicio', compact('productos'));
 });
+
+//Aceptar solicitud de un veterinario
+Route::get('Aceptar/{id}',[SolicitudesController::class,'store'])->name('aceptar');
+
 Route::get('Panel', function () {
     return view('Admin.Inicio');
 })->name('Panel');
@@ -43,6 +47,7 @@ Route::post('Login', [LoginController::class, 'store']);
 
 Route::get('LogOut', [LoginController::class, 'logout'])->name('LogOut'); //cerrar session
 //Adsmin
+
 Route::get('ProductosAdmin', [ProductosController::class, 'index_productos'])->name('ProductosAdmin');
 Route::post('Imagen', [ImagenController::class, 'store'])->name('Imagen.store');
 
