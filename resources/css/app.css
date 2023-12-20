@@ -33,3 +33,18 @@
         transform: translateX(0);
     }
 }
+.slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container {
+    display: flex;
+    width: 850px;
+    transition: transform 2s ease-in-out;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SobreController;
 use App\Http\Controllers\ImagenController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\SubirCVController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\RegistroController;
@@ -13,6 +14,10 @@ use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\SolicitudesController;
 use App\Http\Controllers\NotificacionController;
 use App\Http\Controllers\ServiciosAdminController;
+
+//like
+Route::post('producto/{producto}/likes',[LikeController::class,'store'])->name('likes');
+
 Route::get('Servicio',[ServiciosAdminController::class,'index'])->name('Servicio');
 Route::get('Personal', [PersonalController::class, 'index'])->name('Personal');
 

@@ -17,4 +17,13 @@ class Productos extends Model
         'descuento',
         'imagen'
     ];
+
+
+    public function likes(){
+        return $this->hasMany(Likes::class, 'producto_id', 'id');
+    }
+    public function likedBy()
+    {
+        return $this->belongsToMany(User::class, 'likes', 'producto_id', 'user_id')->withTimestamps();
+    }
 }

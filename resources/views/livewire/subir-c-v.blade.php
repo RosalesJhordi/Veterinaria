@@ -2,7 +2,7 @@
 
     <form wire:submit.prevent='postular' class="w-96 mt-5">
         <div class="mb-4">
-            <label for="cv" :value="__('Curriculum o Hoja de vida(PDF)')"></label>
+            <label for="cv" :value="__('Curriculum o Hoja de vida(PDF)')">Curriculum o Hoja de vida(PDF)</label>
             <input wire:model="cv" id="cv" name="cv" type="file" accept=".pdf" class="block mt-1 w-full" />
         </div>
         @error('cv')

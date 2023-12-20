@@ -23,7 +23,7 @@ class LoginController extends Controller
         if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('mensaje', 'Credenciales Incorrectas');
         }
-        $productos = Productos::all();
+        $productos = Productos::paginate(10);;
         return view('Inicio', compact('productos'));
     }
 
