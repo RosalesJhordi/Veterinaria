@@ -33,17 +33,13 @@
         </div>
     </div>
     <div class="px-20">
-        <h1 class="text-2xl font-semibold">Novedades</h1>
-        <p>AQUI HIRAN LAS NOVEDADES O COSAS NUEVAS QUE SE AGREGUEN</p>
-    </div>
-    <div class="px-20">
         <h1 class="text-2xl font-semibold">Servicios</h1>
     </div>
     <div class="px-20">
         <h1 class="text-2xl font-semibold">Productos</h1>
         <div class="w-full flex px-5 py-5 flex-wrap gap-5">
             @foreach ($productos as $producto)
-                <div class="w-60 border-gray-200 bg-gray-100 border shadow-md rounded-md">
+                <div class="w-72 border-gray-200 bg-gray-100 border shadow-md rounded-md">
                     <img src="{{ asset('Productos') . '/' . $producto->imagen }}"
                         alt="Imagen Producto {{ $producto->nombre }}" class="w-full h-60">
                     <h1>{{ $producto->nombre }}</h1>
@@ -51,6 +47,9 @@
                     <h1>{{ $producto->precio }}</h1>
                 </div>
             @endforeach
+        </div>
+        <div class="my-5 px-10">
+            {{ $productos->links() }}
         </div>
     </div>
     <div class="px-20">
@@ -65,7 +64,6 @@
                 @else
                     <p class="border border-red-600 uppercase bg-red-100 text-red-600 font-bold p-1 text-sm">Debes inicia sesion o crear una cuenta para poder subir tu CV u Hoja de vida</p>
                 @endif
-
             </div>
         </div>
     </div>

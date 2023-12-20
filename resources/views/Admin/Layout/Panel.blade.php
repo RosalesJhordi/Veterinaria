@@ -38,7 +38,7 @@
                     'Resumen' => 'Panel',
                     'Personal' => 'Personal',
                     'Productos' => 'ProductosAdmin',
-                    'Servicios' => 'Servicios',
+                    'Servicios' => 'Servicio',
                 ];
                 $Titulo = trim($__env->yieldContent('titulo'));
             @endphp
@@ -66,7 +66,7 @@
                 <i class="fa-solid fa-basket-shopping text-3xl"></i>
                 Productos
             </a>
-            <a href="{{ route('Personal') }}"
+            <a href="{{ route('Servicio') }}"
                 class="w-1/5 h-36 flex flex-col justify-center items-center bg-orange-600 rounded-sm">
                 <i class="fa-solid fa-shield-cat text-3xl"></i>
                 Servicios

@@ -1,4 +1,4 @@
-<div class="bg-transparent mt-10 flex flex-col justify-center items-center">
+<div class="bg-transparent flex flex-col justify-center items-center">
 
     <form wire:submit.prevent='postular' class="w-96 mt-5">
         <div class="mb-4">

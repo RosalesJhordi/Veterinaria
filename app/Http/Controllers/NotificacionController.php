@@ -16,7 +16,7 @@ class NotificacionController extends Controller
         $estado = Curriculums::all();
 
         //Limpioar notificacione leidas
-        // auth()->user()->unreadNotifications->markAsRead();
+        auth()->user()->unreadNotifications->markAsRead();
         if (auth()->user()->email == 'yhordiyhom65@gmail.com'){
             return view('Notificaciones.Index',[
                 'notificaciones' => $notificaciones

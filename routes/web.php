@@ -12,6 +12,9 @@ use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\SolicitudesController;
 use App\Http\Controllers\NotificacionController;
+use App\Http\Controllers\ServiciosAdminController;
+Route::get('Servicio',[ServiciosAdminController::class,'index'])->name('Servicio');
+Route::get('Personal', [PersonalController::class, 'index'])->name('Personal');
 
 //sOLICITUDES
 Route::get('Solicitudes',[SolicitudesController::class,'index'])->name('Solicitudes');
@@ -22,7 +25,7 @@ Route::get('Notificaciones', NotificacionController::class)->name('Notificacione
 
 
 Route::get('/', function () {
-    $productos = Productos::all();
+    $productos = Productos::paginate(10);;
     return view('Inicio', compact('productos'));
 });
 
@@ -56,4 +59,3 @@ Route::post('GuardarProductos', [ProductosController::class, 'store'])->name('Gu
 Route::get('Eliminar/{id}', [ProductosController::class, 'delete'])->name('delete_product'); //Eliminar producto
 
 Route::get('{id}', [ProductosController::class, 'show_busqueda'])->name('show_busqueda'); //Visualizar productos o servicios buscados
-Route::get('Personal', [PersonalController::class, 'index'])->name('Personal');

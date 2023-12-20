@@ -15,10 +15,17 @@ class SolicitudesController extends Controller
     }
     public function store($id){
         $user = User::where('id',$id)->first();
-        $cv = Curriculums::where('user_id',$user['id'])->first();
+        $cvacept = Curriculums::where('user_id',$user['id'])->first();
 
-        $cv->update(['estado' => 'Aceptado']);
-        $cv->save();
+        $cvacept->update(['estado' => 'Aceptado']);
+        $cvacept->save();
+
+        $add = User::where('id',$user['id'])->first();
+
+        $add->update(['usuario' => 'Veterinario']);
+        $add->save();
+
+        return redirect()->back();
     }
     public function delete(){
 
