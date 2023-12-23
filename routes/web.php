@@ -25,13 +25,10 @@ Route::get('Personal', [PersonalController::class, 'index'])->name('Personal');
 Route::get('Solicitudes',[SolicitudesController::class,'index'])->name('Solicitudes');
 
 //Notificaciones
-
 Route::get('Notificaciones', NotificacionController::class)->name('Notificaciones');
 
-
 Route::get('/', function () {
-    $productos = Productos::paginate(10);;
-    return view('Inicio', compact('productos'));
+    return view('Inicio');
 });
 
 //Aceptar solicitud de un veterinario

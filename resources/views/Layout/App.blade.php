@@ -65,12 +65,16 @@
                     hola: {{ auth()->user()->nombre }}
                 </span>|
                 <a href="{{ route('LogOut') }}"
-                    class="hover:text-black border-b-2 pl-2 border-transparent hover:border-black">cerrar sesion</a>
+                    class="hover:text-black border-b-2 pl-2 border-transparent hover:border-black text-2xl">
+                    <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i>
+                </a>
             @else
                 <a href="{{ route('Registro') }}"
                     class="hover:text-black border-b-2 border-transparent hover:border-black">Crear Cuenta</a>|
                 <a href="{{ route('Login') }}"
-                    class="hover:text-black border-b-2 border-transparent hover:border-black">Iniciar sesion</a>
+                    class="hover:text-black border-b-2 border-transparent hover:border-black text-2xl">
+                    <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i>
+                </a>
             @endif
         </div>
         <i class="fa-solid fa-bars text-xl cursor-pointer" id="menu-btn"></i>
@@ -97,6 +101,12 @@
                     </div>
                 </a>
             @endif
+            <div id="btn-panel" class="bg-red-600  fixed right-0 bottom-40 auto px-10 p-2 flex items-center justify-center gap-2">
+                <div>
+                    @livewire('carrito')
+                </div>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
         @endauth
     </main>
     <footer class="w-full footer flex gap-10 justify-center items-center p-2 text-center bg-gray-300">
@@ -122,6 +132,8 @@
     </footer>
 
     @livewireScripts
+    @stack('scripts')
+
 </body>
 
 </html>

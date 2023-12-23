@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 class ProductosController extends Controller
 {
     public function index_inicio(){
-        $productos = Productos::all();
-        return view('Productos',compact('productos'));
+        return view('Productos');
     }
     public function index_productos(){
         $productos = Productos::all();
